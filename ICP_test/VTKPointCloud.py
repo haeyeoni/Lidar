@@ -1,4 +1,5 @@
 import vtk
+import numpy as np
 
 class VtkPointCloud:
     def __init__(self, zMin=-1.0, zMax=1.0, maxNumPoints=1e6):
