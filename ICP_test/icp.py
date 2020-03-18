@@ -14,7 +14,7 @@ def main():
     cloud_in = pcl.PointCloud()
     cloud_out = pcl.PointCloud()
     cloud_in.from_file(bytes(b'/home/haeyeon/cocel/data1/1.pcd'))
-    cloud_out.from_file(bytes(b'/home/haeyeon/cocel/data1/2.pcd'))
+    cloud_out.from_file(bytes(b'/home/haeyeon/cocel/data1/50.pcd'))
     
     innumPoints = cloud_in.size
     outnumPoints = cloud_out.size
@@ -30,15 +30,21 @@ def main():
     outArray = np.array(np.asarray(cloud_out))
 
     ## Transfrom the input point cloud
-    converted = np.add(inArray.dot(rotation),translation)
+    #converted1 = np.add(outArray.dot(rotation),translation)
+    converted2 = np.add(np.matmul(estimate, rotation),translation)
     #print(str(transf))
 
     ## Render with vtk
 
-    for i in range(innumPoints):
-        pointCloud.addPoint(converted[i,0:3],0)
+    # for i in range(estimate.size):
+        # pointCloud.addPoint(estimate[i],0)
+    for i in range(converted2.shape[0]):
+        pointCloud.addPoint(converted2[i,0:3],0)
     for i in range(innumPoints):
         pointCloud.addPoint(cloud_in[i],1)
+    for i in range(outnumPoints):
+        pointCloud.addPoint(cloud_out[i],-1)
+        
     renderer = vtk.vtkRenderer()
     renderWindow = vtk.vtkRenderWindow()
     renderWindow.AddRenderer(renderer)
