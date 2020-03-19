@@ -51,4 +51,5 @@ def main(file_path, file_number, steps):
 
 
 if __name__ == "__main__":
+    assert len(sys.argv) == 4, "Command Format: python3 icp_multiple.py {filepath} {file_number} {steps}"
     main(sys.argv[1], sys.argv[2], sys.argv[3])
