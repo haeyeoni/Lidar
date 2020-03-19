@@ -30,14 +30,8 @@ def main():
     outArray = np.array(np.asarray(cloud_out))
 
     ## Transfrom the input point cloud
-    #converted1 = np.add(outArray.dot(rotation),translation)
-    converted2 = np.add(np.matmul(estimate, rotation),translation)
-    #print(str(transf))
-
-    ## Render with vtk
-
-    # for i in range(estimate.size):
-        # pointCloud.addPoint(estimate[i],0)
+    converted = np.add(np.matmul(estimate, rotation),translation)
+    
     for i in range(converted2.shape[0]):
         pointCloud.addPoint(converted2[i,0:3],0)
     for i in range(innumPoints):
