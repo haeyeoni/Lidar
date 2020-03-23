@@ -6,6 +6,7 @@ import VTKPointCloud as vpc
 import pcl.pcl_visualization
 import sys
 
+
 def main(file_path, file_number, steps):
     ##load cloud point
     cloud_in = pcl.PointCloud()

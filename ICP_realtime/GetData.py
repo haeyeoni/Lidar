@@ -18,7 +18,8 @@ class GetData():
         self.HOST = "192.168.1.202"
         self.PORT = 2368
         self.data = []
-        self.POINT = []
+        self.point_cloud = []
+        self.point = []
 
     def capture(self):
         soc = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -41,7 +42,7 @@ class GetData():
         assert factory == 0x2237, hex(factory)  # 0x22=VLP-16, 0x37=Strongest Return
         timestamp = float(ts)
         seq_index = 0
-        self.POINT = []
+        self.point = []
         for offset in range(0, 1200, 100):
             flag, azimuth = struct.unpack_from("<HH", data, offset)
             assert flag == 0xEEFF, hex(flag)
@@ -54,8 +55,9 @@ class GetData():
                 for i in range(NUM_LASERS):
                     time_offset = (55.296 * seq_index + 2.304 * i) / 1000000.0
                     if arr[i * 2] != 0:
-                        self.POINT.append(self.calc(arr[i * 2], azimuth, i, timestamp + time_offset))
-
+                        self.point.append(self.calc(arr[i * 2], azimuth, i, timestamp + time_offset))
+                        self.point_cloud.append(self.calc(arr[i * 2], azimuth, i, timestamp + time_offset))
+        
     def calc(self, dis, azimuth, laser_id, timestamp):
         R = dis * DISTANCE_RESOLUTION
         omega = LASER_ANGLES[laser_id] * np.pi / 180.0
