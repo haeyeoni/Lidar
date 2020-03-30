@@ -25,6 +25,7 @@ def main(file_path, file_number, steps):
         icp = cloud_in.make_IterativeClosestPoint()
         ## ICP algorithm ##
         converged, transf, estimate, fitness = icp.icp(cloud_in, cloud_out)
+        print(estimate.size)
         ## Transfrom the input point cloud
         rotation = transf[0:3,0:3]
         translation = transf[3,0:3]  
