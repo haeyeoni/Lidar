@@ -33,8 +33,6 @@ pcl/registration/transformation_estimation_lm.h
 -
 pcl/filters/uniform_sampling.h
 -
-pcl/registration/default_convergence_criteria.h
--
 
 /usr/include/eigen3/Eigen/Cholesky
 Core
