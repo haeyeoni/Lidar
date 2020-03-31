@@ -247,5 +247,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/icp_test.dir/DependInfo.cmake"
+  "CMakeFiles/narf_keypoint_extraction.dir/DependInfo.cmake"
   )

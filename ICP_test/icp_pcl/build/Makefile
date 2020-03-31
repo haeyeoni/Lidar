@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named icp_test
+# Target rules for targets named narf_keypoint_extraction
 
 # Build rule for target.
-icp_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 icp_test
-.PHONY : icp_test
+narf_keypoint_extraction: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 narf_keypoint_extraction
+.PHONY : narf_keypoint_extraction
 
 # fast build rule for target.
-icp_test/fast:
-	$(MAKE) -f CMakeFiles/icp_test.dir/build.make CMakeFiles/icp_test.dir/build
-.PHONY : icp_test/fast
+narf_keypoint_extraction/fast:
+	$(MAKE) -f CMakeFiles/narf_keypoint_extraction.dir/build.make CMakeFiles/narf_keypoint_extraction.dir/build
+.PHONY : narf_keypoint_extraction/fast
 
-icp_test.o: icp_test.cpp.o
+narf_keypoint_extraction.o: narf_keypoint_extraction.cpp.o
 
-.PHONY : icp_test.o
+.PHONY : narf_keypoint_extraction.o
 
 # target to build an object file
-icp_test.cpp.o:
-	$(MAKE) -f CMakeFiles/icp_test.dir/build.make CMakeFiles/icp_test.dir/icp_test.cpp.o
-.PHONY : icp_test.cpp.o
+narf_keypoint_extraction.cpp.o:
+	$(MAKE) -f CMakeFiles/narf_keypoint_extraction.dir/build.make CMakeFiles/narf_keypoint_extraction.dir/narf_keypoint_extraction.cpp.o
+.PHONY : narf_keypoint_extraction.cpp.o
 
-icp_test.i: icp_test.cpp.i
+narf_keypoint_extraction.i: narf_keypoint_extraction.cpp.i
 
-.PHONY : icp_test.i
+.PHONY : narf_keypoint_extraction.i
 
 # target to preprocess a source file
-icp_test.cpp.i:
-	$(MAKE) -f CMakeFiles/icp_test.dir/build.make CMakeFiles/icp_test.dir/icp_test.cpp.i
-.PHONY : icp_test.cpp.i
+narf_keypoint_extraction.cpp.i:
+	$(MAKE) -f CMakeFiles/narf_keypoint_extraction.dir/build.make CMakeFiles/narf_keypoint_extraction.dir/narf_keypoint_extraction.cpp.i
+.PHONY : narf_keypoint_extraction.cpp.i
 
-icp_test.s: icp_test.cpp.s
+narf_keypoint_extraction.s: narf_keypoint_extraction.cpp.s
 
-.PHONY : icp_test.s
+.PHONY : narf_keypoint_extraction.s
 
 # target to generate assembly for a file
-icp_test.cpp.s:
-	$(MAKE) -f CMakeFiles/icp_test.dir/build.make CMakeFiles/icp_test.dir/icp_test.cpp.s
-.PHONY : icp_test.cpp.s
+narf_keypoint_extraction.cpp.s:
+	$(MAKE) -f CMakeFiles/narf_keypoint_extraction.dir/build.make CMakeFiles/narf_keypoint_extraction.dir/narf_keypoint_extraction.cpp.s
+.PHONY : narf_keypoint_extraction.cpp.s
 
 # Help Target
 help:
@@ -157,11 +157,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... icp_test"
+	@echo "... narf_keypoint_extraction"
 	@echo "... edit_cache"
-	@echo "... icp_test.o"
-	@echo "... icp_test.i"
-	@echo "... icp_test.s"
+	@echo "... narf_keypoint_extraction.o"
+	@echo "... narf_keypoint_extraction.i"
+	@echo "... narf_keypoint_extraction.s"
 .PHONY : help
 
 
