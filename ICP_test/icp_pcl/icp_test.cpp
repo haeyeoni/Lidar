@@ -45,9 +45,9 @@ int main ( int argc, char** argv )
   seg.setMaxIterations (1000);
   seg.setDistanceThreshold (0.2);
 
-  for(int i = 1; i < 1200; i = i+10){  
+  for(int i = 1; i < 743; i = i+1){  
 
-    std::string path = "/home/haeyeon/Lidar/RIST_data/";
+    std::string path = "/home/haeyeon/Lidar/ICP_test/data1/";
     std::string ext = ".pcd";
     std::string filename = path + std::to_string(i) + ext;
 
@@ -75,15 +75,15 @@ int main ( int argc, char** argv )
     pcl::IterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> icp; 
     icp.setInputSource(source);
     icp.setInputTarget(target);
-    icp.setMaximumIterations (200);
-    icp.align(*cloud_icp_done);
+    //icp.setMaximumIterations (500);
+    icp.align(*target);
     if(icp.hasConverged()){
         std::cout << "\nICP has converged, score is " << icp.getFitnessScore () << std::endl;
         std::cout << std::to_string(i) << std::endl;
-        viewer.addPointCloud (cloud_icp_done, "cloud"+std::to_string(i));
+        viewer.addPointCloud (target, "cloud"+std::to_string(i));
         viewer.spinOnce();
       }
-    transformation_matrix = icp.getFinalTransformation();
+    //transformation_matrix = icp.getFinalTransformation();
   }
 
   viewer.spin();

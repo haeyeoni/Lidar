@@ -23,8 +23,6 @@ pcl/keypoints/narf_keypoint.h
 -
 pcl/console/parse.h
 -
-pcl/visualization/point_cloud_handlers.h
--
 
 /usr/include/eigen3/Eigen/Cholesky
 Core
