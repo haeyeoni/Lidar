@@ -1,3 +1,6 @@
 data1/*.pcd
 RIST_data/
 *.pcd
+ICO_test/data2
+ICO_test/data3
+

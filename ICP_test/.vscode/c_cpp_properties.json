@@ -5,7 +5,9 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/usr/include/pcl-1.8",
-                "/usr/include/eigen3"
+                "/usr/include/eigen3",
+                "/opt/ros/melodic/include",
+                "/usr/include/vtk-6.3"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

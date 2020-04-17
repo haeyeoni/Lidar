@@ -5,13 +5,14 @@ import vtk
 import VTKPointCloud as vpc
 import pcl.pcl_visualization
 import sys
+import time
 
-
-file_path = '/home/haeyeon/Lidar/ICP_test/data1'
-file_number = '744'
+file_path = '/home/haeyeon/Lidar/ICP_test/data3'
+file_number = '385'
 steps = '1'
 
 def main(file_path, file_number, steps):
+    start_time = time.time()
     ##load cloud point
     cloud_source = pcl.PointCloud()
     cloud_target = pcl.PointCloud()
@@ -25,7 +26,6 @@ def main(file_path, file_number, steps):
         sor = cloud_source.make_voxel_grid_filter()
         sor.set_leaf_size(0.05, 0.05, 0.05)
         cloud_source = sor.filter()
-
         cloud_source = ransac(cloud_source)
         if cloud_target.size is 0:
             cloud_target = cloud_source
@@ -41,11 +41,11 @@ def main(file_path, file_number, steps):
         #translation = transf[3,0:3]  
         #converted = np.add(np.matmul(estimate, rotation),translation)
         if(converged):
-            cloud_target = estimate
             for j in range(estimate.size):
                 result.append(estimate[j])
             
     cloud_final = pcl.PointCloud(result)
+    print("---{}s seconds---".format(time.time()-start_time))
     render(cloud_final)
 
 

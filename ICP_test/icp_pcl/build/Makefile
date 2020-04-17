@@ -123,6 +123,19 @@ icp_test/fast:
 	$(MAKE) -f CMakeFiles/icp_test.dir/build.make CMakeFiles/icp_test.dir/build
 .PHONY : icp_test/fast
 
+#=============================================================================
+# Target rules for targets named warp_rigid
+
+# Build rule for target.
+warp_rigid: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 warp_rigid
+.PHONY : warp_rigid
+
+# fast build rule for target.
+warp_rigid/fast:
+	$(MAKE) -f CMakeFiles/warp_rigid.dir/build.make CMakeFiles/warp_rigid.dir/build
+.PHONY : warp_rigid/fast
+
 icp_test.o: icp_test.cpp.o
 
 .PHONY : icp_test.o
@@ -150,6 +163,33 @@ icp_test.cpp.s:
 	$(MAKE) -f CMakeFiles/icp_test.dir/build.make CMakeFiles/icp_test.dir/icp_test.cpp.s
 .PHONY : icp_test.cpp.s
 
+warp_rigid.o: warp_rigid.cpp.o
+
+.PHONY : warp_rigid.o
+
+# target to build an object file
+warp_rigid.cpp.o:
+	$(MAKE) -f CMakeFiles/warp_rigid.dir/build.make CMakeFiles/warp_rigid.dir/warp_rigid.cpp.o
+.PHONY : warp_rigid.cpp.o
+
+warp_rigid.i: warp_rigid.cpp.i
+
+.PHONY : warp_rigid.i
+
+# target to preprocess a source file
+warp_rigid.cpp.i:
+	$(MAKE) -f CMakeFiles/warp_rigid.dir/build.make CMakeFiles/warp_rigid.dir/warp_rigid.cpp.i
+.PHONY : warp_rigid.cpp.i
+
+warp_rigid.s: warp_rigid.cpp.s
+
+.PHONY : warp_rigid.s
+
+# target to generate assembly for a file
+warp_rigid.cpp.s:
+	$(MAKE) -f CMakeFiles/warp_rigid.dir/build.make CMakeFiles/warp_rigid.dir/warp_rigid.cpp.s
+.PHONY : warp_rigid.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -157,11 +197,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... icp_test"
 	@echo "... edit_cache"
+	@echo "... icp_test"
+	@echo "... warp_rigid"
 	@echo "... icp_test.o"
 	@echo "... icp_test.i"
 	@echo "... icp_test.s"
+	@echo "... warp_rigid.o"
+	@echo "... warp_rigid.i"
+	@echo "... warp_rigid.s"
 .PHONY : help
 
 

@@ -65,11 +65,11 @@ int main ( int argc, char** argv )
     extract.setNegative (true);
     extract.filter (*source);
 
+    // initialize the target cloud
     if(target->empty()) {
       target = source;
       continue;
     }
-
     //icp
     //pcl::transformPointCloud(*source, *source, transformation_matrix);
     pcl::IterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> icp; 
@@ -84,6 +84,7 @@ int main ( int argc, char** argv )
         viewer.spinOnce();
       }
     //transformation_matrix = icp.getFinalTransformation();
+    std::cout << icp.getFinalTransformation () << std::endl;
   }
 
   viewer.spin();
